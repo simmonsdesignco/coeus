@@ -2,12 +2,6 @@ Coeus
 =====
 
 
-CONTENTS OF THIS FILE
----------------------
-
- * Introduction
-
-
 INTRODUCTION
 ------------
 
@@ -25,3 +19,10 @@ project, although any help or advice would be greatly appreciated!
 Included is a sub-theme for fine-grained customization. Use this to test out the
 base theme and test it against validators such as the W3C Nu Markup Validation
 Service (validator.w3.org/nu/).
+
+
+
+CONTENTS OF THIS FILE
+---------------------
+
+ * Introduction
