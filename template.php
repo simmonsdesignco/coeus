@@ -15,6 +15,7 @@ include_once drupal_get_path('theme', 'coeus') .
  *     Properties used: #type, #group, #every_page, and #browsers.
  */
 function coeus_preprocess_html(&$variables) {
+  $browser_name = browser_detection('browser_name');
   // Adds the Open Sans Google Font as an external stylesheet.
   drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans', array(
     'type' => 'external',
@@ -24,10 +25,6 @@ function coeus_preprocess_html(&$variables) {
 
   drupal_add_js(drupal_get_path('theme', 'coeus') .
     '/js/modernizr.custom.min.js');
-  
-  // Sets the HTML class to include the browser name from the browser detection
-  // script.
-  $browser_name = browser_detection('browser_name');
 
   // HTML element attributes.
   $variables['html_attributes_array'] = array(
@@ -99,13 +96,21 @@ function coeus_preprocess_html_tag(&$variables) {
  *   @link http://tinyurl.com/w3c-html5-semantics-head @endlink.
  */
 function coeus_html_head_alter(&$head_elements) {
-  // Get the browser name and set the head title for use later.
   $browser_name = browser_detection('browser_name');
-  $drupal_title = drupal_get_title() . ' | ' . variable_get('site_name');
-  $site_title = implode(' - ', array(
-    $drupal_title,
-    variable_get('site_slogan')
+  $coeus_get_slogan = NULL;
+
+  $coeus_get_title = implode(' | ', array(
+    drupal_get_title(),
+    variable_get('site_name')
   ));
+
+  if (variable_get('site_slogan') != NULL) {
+    $coeus_get_title = implode(' - ', array(
+      $coeus_get_title,
+      variable_get('site_slogan')
+    ));
+  }
+  $coeus_title = $coeus_get_title;
 
 	// Remove Drupal's 'Generator' and the 'Content-Type' attributes.
   unset($head_elements['system_meta_generator']);
@@ -125,7 +130,7 @@ function coeus_html_head_alter(&$head_elements) {
   $head_elements['head_title'] = array(
     '#type' => 'html_tag',
     '#tag' => 'title',
-    '#value' => $site_title,
+    '#value' => $coeus_title,
     '#weight' => -9
   );
 
@@ -157,16 +162,23 @@ function coeus_html_head_alter(&$head_elements) {
 /**
  * Preprocess variables for page.tpl.php
  */
-function coeus_preprocess_page(&$vars) {
-  global $theme_key;
-  $theme_name = $theme_key;
+function coeus_preprocess_page(&$variables) {
+  $coeus_get_title = implode(' | ', array(
+    drupal_get_title(),
+    variable_get('site_name')
+  ));
+
+  if (variable_get('site_slogan') != NULL) {
+    $coeus_get_title = implode(' - ', array(
+      $coeus_get_title,
+      variable_get('site_slogan')
+    ));
+  }
+  $coeus_title = $coeus_get_title;
 
   // Set up logo element
-  $logo_path = check_url($vars['logo']);
+  $logo_path = check_url($variables['logo']);
   $logo_alt = variable_get('site_name');
-  $logo_title = drupal_get_title() . ' | ' . $logo_alt;
-  $logo_array = array($logo_title, variable_get('site_slogan'));
-  $logo_title_imploded = implode(' - ', $logo_array);
   $logo_vars = array(
     'path' => $logo_path,
     'alt' => $logo_alt . ' logo',
@@ -174,11 +186,11 @@ function coeus_preprocess_page(&$vars) {
       'class' => 'site-logo'
     )
   );
-  $vars['logo_img'] = theme('image', $logo_vars);
-  $vars['site_logo'] = $vars['logo_img'] ? l($vars['logo_img'],
+  $variables['logo_img'] = theme('image', $logo_vars);
+  $variables['site_logo'] = $variables['logo_img'] ? l($variables['logo_img'],
     '<front>', array(
       'attributes' => array(
-        'title' => check_plain($logo_title_imploded)
+        'title' => check_plain($coeus_title)
       ),
       'html' => TRUE
     )
