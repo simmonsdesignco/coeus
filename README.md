@@ -4,7 +4,7 @@ Coeus
 Current Maintainer: Richard Buchanan <richard_buchanan@buchanandesigngroup.com>
 
 Coeus is planned as a lightweight, flexible, 12-column, responsive, HTML5 /
-RDFa 1.1 standards compliant theme.
+RDFa 1.1 standards compliant Drupal 7 base theme.
 
 The name Coeus is derived from a Titan in Greek mythology. Like most Titans, he
 played no active part in Greek religion, but was primarily important for his
