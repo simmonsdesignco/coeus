@@ -1,6 +1,7 @@
 Coeus
 =====
 Version: 7.x-1.x
+
 Current Maintainer: Richard Buchanan <richard_buchanan@buchanandesigngroup.com>
 
 Coeus is planned as a lightweight, flexible, 12-column, responsive, HTML5 /
