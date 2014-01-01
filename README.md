@@ -1,8 +1,11 @@
 Coeus
 =====
+Version: 7.x-1.x
 
 Current Maintainer: Richard Buchanan <richard_buchanan@buchanandesigngroup.com>
 
+INTRODUCTION
+------------
 Coeus is planned as a lightweight, flexible, 12-column, responsive, HTML5 /
 RDFa 1.1 standards compliant Drupal 7 base theme.
 
