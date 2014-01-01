@@ -1,5 +1,5 @@
-coeus-7.x
-=========
+Coeus
+=====
 
 
 CONTENTS OF THIS FILE
