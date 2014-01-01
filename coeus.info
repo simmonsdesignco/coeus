@@ -1,0 +1,27 @@
+name = Coeus
+description = A lightweight, flexible, 12-column, responsive, HTML5 / RDFa 1.1 compliant Drupal theme.
+version = VERSION
+core = 7.x
+
+; Stylesheets
+stylesheets[all][] = css/960_12_col.css
+stylesheets[all][] = css/styles.css
+
+; Regions
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar
+regions[footer] = Footer
+
+; Features
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = node_user_picture
+features[] = comment_user_picture
+features[] = comment_user_verification
+features[] = favicon
+features[] = main_menu
+features[] = secondary_menu

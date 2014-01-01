@@ -1,0 +1,16 @@
+name = Coeus Sub-theme
+description = Sub-theme for Coeus, a lightweight, flexible, 12-column, responsive, HTML5 / RDFa 1.1 compliant Drupal theme.
+version = VERSION
+core = 7.x
+base theme = coeus
+
+; Stylesheets
+stylesheets[all][] = css/custom.styles.css
+
+; Regions
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[sidebar_first] = Sidebar
+regions[content] = Content
+regions[footer] = Footer

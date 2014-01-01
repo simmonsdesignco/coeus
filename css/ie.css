@@ -1,0 +1,9 @@
+/**
+ * @file
+ * IE fixes stylesheet.
+ *
+ * IE-specific stylesheet, only included when IE 6-8 are being used.
+ */
+body {
+  font-size: 16px;
+}
