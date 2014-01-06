@@ -6,6 +6,7 @@ core = 7.x
 ; Stylesheets
 stylesheets[all][] = css/960_12_col.css
 stylesheets[all][] = css/styles.css
+stylesheets[all][] = css/media-queries.css
 
 ; Regions
 regions[header] = Header

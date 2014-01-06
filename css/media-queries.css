@@ -1,0 +1,18 @@
+/**
+ *
+ */
+
+@media screen and (max-width: 1028px) {
+  .container_12 {
+    max-width: 718px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container_12 {
+    width: 100%;
+  }
+  #footer-section {
+    padding: 0;
+  }
+}

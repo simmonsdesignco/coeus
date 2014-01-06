@@ -61,7 +61,7 @@
 // Sets up some variables to be used later.
 ?>
 <div id="page-container">
-  <section id="top-nav" class="container_12 clearfix">
+  <section id="top-nav" class="clearfix">
     <div id="branding" class="grid_4">
     <?php if ($site_logo): ?><figure id="logo-figure" class="grid_4">
       <?php print $site_logo; ?></figure>
