@@ -37,66 +37,60 @@ is the main template file used in setting up the grid used throughout the site.
 The following are the page elements set by the page template file, identified by
 the element ID and element type.
 
-page-container
---------------
+*page-container*
 The page container div wraps the page's content. It fills the same area as the
 body element, which is 100% of the page's width and height.
 
-  1 top-nav
-  ---------
-  The top navigation section spans the full-width of the page container div
-  and includes the site logo and main navigational menus.
+*top-nav*
+The top navigation section spans the full-width of the page container div
+and includes the site logo and main navigational menus.
 
-    *1.1 branding
-    The branding div wraps the site logo and is 4-columns wide.
+* 1.1 branding
+The branding div wraps the site logo and is 4-columns wide.
 
-      *1.1a logo-figure
-      The logo figure contains the site logo and is a responsive width based on
-      the width of the branding div.
+* 1.1a logo-figure
+The logo figure contains the site logo and is a responsive width based on
+the width of the branding div.
       
-    *1.2 nav-bar
-    The navigational bar div wraps the site's main navigational menus.
+* 1.2 nav-bar
+The navigational bar div wraps the site's main navigational menus.
 
-      *1.2a main-nav
-      The main navigation nav contains the site's main menu. By default this
-      is the main menu defined by Drupal, including a "Home" link.
+* 1.2a main-nav
+The main navigation nav contains the site's main menu. By default this
+is the main menu defined by Drupal, including a "Home" link.
 
-      *1.2b secondary-nav
-      The secondary navigation nav contains the site's secondary menu. By
-      default this is the user menu.
+* 1.2b secondary-nav
+The secondary navigation nav contains the site's secondary menu. By
+default this is the user menu.
 
-  2 page-header
-  -------------
-    *2.1 page-title
+*page-header*
+* 2.1 page-title
 
-    *2.2 breadcrumb
+* 2.2 breadcrumb
 
-  3 highlights
-  ------------
-    *3.1 site-messages
+*highlights*
+*3.1 site-messages
 
-    *3.2 highlighted
+*3.2 highlighted
 
-    *3.3 help
+*3.3 help
 
-  4 content-section
-  -----------------
-    *4.1 main-content
+*content-section*
+* 4.1 main-content
 
-    *4.2 content-header
+* 4.2 content-header
 
-    *4.3 tabs
+* 4.3 tabs
 
-    *4.4 action-links
+* 4.4 action-links
 
-    *4.5 content
+* 4.5 content
 
-      *4.5a sidebar-first
+* 4.5a sidebar-first
 
-      *4.5b page-content
+* 4.5b page-content
 
-  5 footer
-  --------
-    *5.1 footer-section
+*footer*
+* 5.1 footer-section
 
-      *5.1a content
+* 5.1a content
