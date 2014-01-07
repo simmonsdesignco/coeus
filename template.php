@@ -23,8 +23,7 @@ function coeus_preprocess_html(&$variables) {
     'every_page' => TRUE
   ));
 
-  drupal_add_js(drupal_get_path('theme', 'coeus') .
-    '/js/modernizr.custom.min.js');
+  drupal_add_js(path_to_theme() . '/js/modernizr.custom.min.js');
 
   // HTML element attributes.
   $variables['html_attributes_array'] = array(
@@ -96,9 +95,12 @@ function coeus_preprocess_html_tag(&$variables) {
  *   @link http://tinyurl.com/w3c-html5-semantics-head @endlink.
  */
 function coeus_html_head_alter(&$head_elements) {
+  // Create browser name variable from the browser_detection script.
   $browser_name = browser_detection('browser_name');
+  // Set up new slogan variable.
   $coeus_get_slogan = NULL;
 
+  // 
   $coeus_get_title = implode(' | ', array(
     drupal_get_title(),
     variable_get('site_name')
@@ -163,20 +165,24 @@ function coeus_html_head_alter(&$head_elements) {
  * Preprocess variables for page.tpl.php
  */
 function coeus_preprocess_page(&$variables) {
+  // Create 'Page Title | Site Name' variable.
   $coeus_get_title = implode(' | ', array(
     drupal_get_title(),
     variable_get('site_name')
   ));
 
+  // If using a slogan, create 'Page Title | Site Name - Site Slogan' variable.
   if (variable_get('site_slogan') != NULL) {
     $coeus_get_title = implode(' - ', array(
       $coeus_get_title,
       variable_get('site_slogan')
     ));
   }
+
+  // Create variable of complete <title> variable from above variables.
   $coeus_title = $coeus_get_title;
 
-  // Set up logo element
+  // Set up logo element with the logo path, alt tag, and attributes.
   $logo_path = check_url($variables['logo']);
   $logo_alt = variable_get('site_name');
   $logo_vars = array(
@@ -186,6 +192,8 @@ function coeus_preprocess_page(&$variables) {
       'class' => 'site-logo'
     )
   );
+
+  // Override the default logo element with custom variables set above.
   $variables['logo_img'] = theme('image', $logo_vars);
   $variables['site_logo'] = $variables['logo_img'] ? l($variables['logo_img'],
     '<front>', array(
