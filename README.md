@@ -68,7 +68,7 @@ default this is the user menu.
 
 * *#breadcrumb*  
 
-*highlights*  
+*#highlights*  
 * *#site-messages*  
 
 * *#highlighted*  
@@ -84,13 +84,13 @@ default this is the user menu.
 
 * *#action-links*  
 
-* content  
+* *#content*  
 
-* sidebar-first  
+* *#sidebar-first*  
 
-* page-content  
+* *#page-content*  
 
 *footer*  
-* footer-section  
+* *#footer-section*  
 
-* content  
+* *#content*  
