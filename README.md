@@ -90,7 +90,7 @@ default this is the user menu.
 
 * *#page-content*  
 
-*footer*  
+*#footer*  
 * *#footer-section*  
 
 * *#content*  
