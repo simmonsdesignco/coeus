@@ -37,52 +37,52 @@ is the main template file used in setting up the grid used throughout the site.
 The following are the page elements set by the page template file, identified by
 the element ID and element type.
 
-*page-container*  
+*#page-container*  
 The page container div wraps the page's content. It fills the same area as the
 body element, which is 100% of the page's width and height.
 
-*top-nav*  
+*#top-nav*  
 The top navigation section spans the full-width of the page container div
 and includes the site logo and main navigational menus.
 
-* branding  
+* *#branding*  
 The branding div wraps the site logo and is 4-columns wide.
 
-* logo-figure  
+* *#logo-figure*  
 The logo figure contains the site logo and is a responsive width based on
 the width of the branding div.
       
-* nav-bar  
+* *#nav-bar*  
 The navigational bar div wraps the site's main navigational menus.
 
-* main-nav  
+* *#main-nav*  
 The main navigation nav contains the site's main menu. By default this
 is the main menu defined by Drupal, including a "Home" link.
 
-* secondary-nav  
+* *#secondary-nav*  
 The secondary navigation nav contains the site's secondary menu. By
 default this is the user menu.
 
-*page-header*  
-* page-title  
+*#page-header*  
+* *#page-title*  
 
-* breadcrumb  
+* *#breadcrumb*  
 
 *highlights*  
-* site-messages  
+* *#site-messages*  
 
-* highlighted  
+* *#highlighted*  
 
-* help  
+* *#help*  
 
-*content-section*  
-* main-content  
+*#content-section*  
+* *#main-content*  
 
-* content-header  
+* *#content-header*  
 
-* tabs  
+* *#tabs*  
 
-* action-links  
+* *#action-links*  
 
 * content  
 
