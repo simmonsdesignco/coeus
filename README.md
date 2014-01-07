@@ -37,69 +37,66 @@ is the main template file used in setting up the grid used throughout the site.
 The following are the page elements set by the page template file, identified by
 the element ID and element type.
 
-1 page-container
------------------------
+page-container
+--------------
 The page container div wraps the page's content. It fills the same area as the
 body element, which is 100% of the page's width and height.
 
-<dl>
-<dt>1 top-nav</dt>
-<dd>The top navigation section spans the full-width of the page container div
-and includes the site logo and main navigational menus.
-<ul>
-<li>1.1 branding
+  1 top-nav
+  ---------
+  The top navigation section spans the full-width of the page container div
+  and includes the site logo and main navigational menus.
+
+    *1.1 branding
     The branding div wraps the site logo and is 4-columns wide.
 
       *1.1a logo-figure
       The logo figure contains the site logo and is a responsive width based on
       the width of the branding div.
-</li>
       
-<li>1.2 nav-bar
-The navigational bar div wraps the site's main navigational menus.
+    *1.2 nav-bar
+    The navigational bar div wraps the site's main navigational menus.
 
-*1.2a main-nav
-The main navigation nav contains the site's main menu. By default this
-is the main menu defined by Drupal, including a "Home" link.
+      *1.2a main-nav
+      The main navigation nav contains the site's main menu. By default this
+      is the main menu defined by Drupal, including a "Home" link.
 
-*1.2b secondary-nav
-The secondary navigation nav contains the site's secondary menu. By
-default this is the user menu.
-</li>
-</ul>
-</dd>
-<dt>2 page-header </dt>
-<dd>
-    2.1 page-title
+      *1.2b secondary-nav
+      The secondary navigation nav contains the site's secondary menu. By
+      default this is the user menu.
 
-    2.2 breadcrumb
-</dd>
-<dt>3 highlights </dt>
-<dd>
-    3.1 site-messages
+  2 page-header
+  -------------
+    *2.1 page-title
 
-    3.2 highlighted
+    *2.2 breadcrumb
 
-    3.3 help
-</dd>
-  1-4 content-section
+  3 highlights
+  ------------
+    *3.1 site-messages
 
-    1-4.1 main-content
+    *3.2 highlighted
 
-    1-4.2 content-header
+    *3.3 help
 
-    1-4.3 tabs
+  4 content-section
+  -----------------
+    *4.1 main-content
 
-    1-4.4 action-links
+    *4.2 content-header
 
-    1-4.5 content
+    *4.3 tabs
 
-      1-4.5a sidebar-first
+    *4.4 action-links
 
-      1-4.5b page-content
+    *4.5 content
 
-  1-5 footer
+      *4.5a sidebar-first
 
-    1-5.1 footer-section
+      *4.5b page-content
 
-      1-5.1a content
+  5 footer
+  --------
+    *5.1 footer-section
+
+      *5.1a content
