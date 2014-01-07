@@ -43,7 +43,6 @@ The page container div wraps the page's content. It fills the same area as the
 body element, which is 100% of the page's width and height.
 
   1-1 top-nav <section>
-  ---------------------
   The top navigation section spans the full-width of the page container div
   and includes the site logo and main navigational menus.
 
@@ -66,14 +65,12 @@ body element, which is 100% of the page's width and height.
       default this is the user menu.
 
   1-2 page-header <header>
-  ------------------------
 
     1-2.1 page-title <h1>
 
     1-2.2 breadcrumb <div>
 
   1-3 highlights <section>
-  ------------------------
 
     1-3.1 site-messages <div>
 
@@ -82,7 +79,6 @@ body element, which is 100% of the page's width and height.
     1-3.3 help <div>
 
   1-4 content-section <section>
-  -----------------------------
 
     1-4.1 main-content <a>
 
@@ -99,7 +95,6 @@ body element, which is 100% of the page's width and height.
       1-4.5b page-content <article>
 
   1-5 footer <footer>
-  -------------------
 
     1-5.1 footer-section <div>
 
