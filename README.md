@@ -45,52 +45,52 @@ body element, which is 100% of the page's width and height.
 The top navigation section spans the full-width of the page container div
 and includes the site logo and main navigational menus.
 
-* 1.1 branding
+* branding
 The branding div wraps the site logo and is 4-columns wide.
 
-* 1.1a logo-figure
+* logo-figure
 The logo figure contains the site logo and is a responsive width based on
 the width of the branding div.
       
-* 1.2 nav-bar
+* nav-bar
 The navigational bar div wraps the site's main navigational menus.
 
-* 1.2a main-nav
+* main-nav
 The main navigation nav contains the site's main menu. By default this
 is the main menu defined by Drupal, including a "Home" link.
 
-* 1.2b secondary-nav
+* secondary-nav
 The secondary navigation nav contains the site's secondary menu. By
 default this is the user menu.
 
 *page-header*
-* 2.1 page-title
+* page-title
 
-* 2.2 breadcrumb
+* breadcrumb
 
 *highlights*
-*3.1 site-messages
+* site-messages
 
-*3.2 highlighted
+* highlighted
 
-*3.3 help
+* help
 
 *content-section*
-* 4.1 main-content
+* main-content
 
-* 4.2 content-header
+* content-header
 
-* 4.3 tabs
+* tabs
 
-* 4.4 action-links
+* action-links
 
-* 4.5 content
+* content
 
-* 4.5a sidebar-first
+* sidebar-first
 
-* 4.5b page-content
+* page-content
 
 *footer*
-* 5.1 footer-section
+* footer-section
 
-* 5.1a content
+* content
