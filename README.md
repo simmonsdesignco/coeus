@@ -37,7 +37,7 @@ is the main template file used in setting up the grid used throughout the site.
 The following are the page elements set by the page template file, identified by
 the element ID and element type.
 
-1 page-container <div>
+1 page-container
 -----------------------
 The page container div wraps the page's content. It fills the same area as the
 body element, which is 100% of the page's width and height.
@@ -82,24 +82,24 @@ default this is the user menu.
 
     3.3 help
 </dd>
-  1-4 content-section <section>
+  1-4 content-section
 
-    1-4.1 main-content <a>
+    1-4.1 main-content
 
-    1-4.2 content-header <div>
+    1-4.2 content-header
 
-    1-4.3 tabs <div>
+    1-4.3 tabs
 
-    1-4.4 action-links <ul>
+    1-4.4 action-links
 
-    1-4.5 content <div>
+    1-4.5 content
 
-      1-4.5a sidebar-first <aside>
+      1-4.5a sidebar-first
 
-      1-4.5b page-content <article>
+      1-4.5b page-content
 
-  1-5 footer <footer>
+  1-5 footer
 
-    1-5.1 footer-section <div>
+    1-5.1 footer-section
 
-      1-5.1a content <div>
+      1-5.1a content
