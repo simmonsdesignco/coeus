@@ -102,8 +102,7 @@
         <h1 id="page-title"><?php print $title; ?></h1>
         <?php print render($title_suffix); ?></div>
       <div id="search-block-wrapper" class="grid_3 omega">
-        <?php $search_block = module_invoke('search', 'block_view', 'search');
-      	print render($search_block); ?>
+        <?php $search_block = module_invoke('search', 'block_view', 'search'); print render($search_block); ?>
       </div>
     </div>
     <hr noshade id="page-title-hr" class="clearfix">
@@ -150,15 +149,13 @@
     <div id="footer-section" class="container_12">
       <div class="content">
         <ul class="grid_4 alpha">
-          <li>Powered by <a href="https://drupal.org"
-            target="_blank">Drupal</a> </li>
+          <li>Powered by <a href="https://drupal.org" target="_blank">Drupal</a> </li>
         </ul>
         <ul class="grid_4">
           <li></li>
         </ul>
         <ul class="grid_4 omega">
-          <li>Theme by <a href="http://www.buchanandesigngroup.com"
-            target="_blank">Buchanan Design Group</a> </li>
+          <li>Theme by <a href="http://www.buchanandesigngroup.com" target="_blank">Buchanan Design Group</a> </li>
         </ul>
       </div>
     </div>
