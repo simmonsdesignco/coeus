@@ -60,24 +60,21 @@
 
 // Sets up some variables to be used later.
 ?>
+
 <div id="page-container">
   <header id="top-nav" class="clearfix">
     <div id="top-nav-wrapper" class="container_12">
       <div id="branding" class="grid_4 alpha">
         <?php if ($logo): ?>
-          <figure id="logo-figure">
-            <?php print $site_logo; ?>
-          </figure>
+        <figure id="logo-figure"><?php print $site_logo; ?></figure>
         <?php endif; ?>
         <?php if (!$logo): ?>
-            <?php print $site_name; ?>
+        <?php print $site_name; ?>
         <?php endif; ?>
       </div>
-
       <?php if ($main_menu || $secondary_menu): ?>
       <div id="navbar" class="grid_8 omega">
-        <nav id="main-nav" class="alpha">
-          <?php print theme('links__system_main_menu', array(
+        <nav id="main-nav" class="alpha"><?php print theme('links__system_main_menu', array(
             'links' => $main_menu,
             'attributes' => array(
               'id' => 'main-menu',
@@ -85,10 +82,8 @@
                 'site-nav'
               )
             )
-          )); ?>
-        </nav>
-        <nav id="secondary-nav" class="omega">
-          <?php print theme('links__system_secondary_menu', array(
+          )); ?> </nav>
+        <nav id="secondary-nav" class="omega"><?php print theme('links__system_secondary_menu', array(
             'links' => $secondary_menu,
             'attributes' => array(
               'id' => 'secondary-menu',
@@ -96,99 +91,74 @@
                 'site-nav'
               )
             )
-          )); ?>
-        </nav>
+          )); ?> </nav>
       </div>
       <?php endif ?>
     </div>
   </header>
-  
   <section id="page-header" class="container_12 clearfix">
-  	<div id="page-title-search" class="grid_12 clearfix">
-    	<div id="page-title-wrapper" class="grid_9 alpha">
-      	<?php print render($title_prefix); ?>
-      	<h1 id="page-title"><?php print $title; ?></h1>
-      	<?php print render($title_suffix); ?>
-    	</div>
-    	<div id="search-block-wrapper" class="grid_3 omega">
-      	<?php $search_block = module_invoke('search', 'block_view', 'search');
+    <div id="page-title-search" class="grid_12 clearfix">
+      <div id="page-title-wrapper" class="grid_9 alpha"><?php print render($title_prefix); ?>
+        <h1 id="page-title"><?php print $title; ?></h1>
+        <?php print render($title_suffix); ?></div>
+      <div id="search-block-wrapper" class="grid_3 omega">
+        <?php $search_block = module_invoke('search', 'block_view', 'search');
       	print render($search_block); ?>
-    	</div>
-    </div>
-  	<hr noshade id="page-title-hr" class="clearfix">
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb-wrapper" class="grid_12 clearfix">
-        <?php print $breadcrumb; ?>
       </div>
+    </div>
+    <hr noshade id="page-title-hr" class="clearfix">
+    <?php if ($breadcrumb): ?>
+    <div id="breadcrumb-wrapper" class="grid_12 clearfix"><?php print $breadcrumb; ?></div>
     <?php endif; ?>
   </section>
-  
   <?php if ($messages || $page['highlighted'] || $page['help']): ?>
   <section id="highlights" class="container_12 clearfix">
-
     <?php if ($messages): ?>
-      <div id="site-messages"><?php print $messages; ?></div>
+    <div id="site-messages"><?php print $messages; ?></div>
     <?php endif; ?>
-  
     <?php if ($page['highlighted']): ?>
-      <div id="highlighted"><?php print render($page['highlighted']); ?></div>
+    <div id="highlighted"><?php print render($page['highlighted']); ?></div>
     <?php endif; ?>
-  
     <?php if ($page['help']): ?>
-      <div id="help"><?php print render($page['help']); ?></div>
+    <div id="help"><?php print render($page['help']); ?></div>
     <?php endif; ?>
   </section>
   <?php endif; ?>
-  
-  <section id="content-section" class="container_12 clearfix">
-    <a id="main-content"></a>
-    
+  <section id="content-section" class="container_12 clearfix"><a id="main-content"></a>
     <?php if ($page['header']): ?>
-      <div id="content-header"><?php print render($page['header']); ?></div>
+    <div id="content-header"><?php print render($page['header']); ?></div>
     <?php endif; ?>
-  
     <?php if ($tabs): ?>
-      <div id="tabs"><?php print render($tabs); ?></div>
+    <div id="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
-  
     <?php if ($action_links): ?>
-      <ul id="action-links"><?php print render($action_links); ?></ul>
+    <ul id="action-links">
+      <?php print render($action_links); ?>
+    </ul>
     <?php endif; ?>
-
     <div id="content" class="container_12">
       <?php if (!empty($page['sidebar'])): ?>
-        <article id="page-content" class="grid_9 alpha">
-          <?php print render($page['content']); ?>
-        </article>
-        <aside id="sidebar" class="grid_3 omega">
-          <?php print render($page['sidebar']); ?>
-        </aside>
+      <article id="page-content" class="grid_9 alpha"><?php print render($page['content']); ?> </article>
+      <aside id="sidebar" class="grid_3 omega"><?php print render($page['sidebar']); ?></aside>
       <?php endif; ?>
       <?php if (empty($page['sidebar'])): ?>
-        <article id="page-content" class="grid_12">
-          <?php print render($page['content']); ?>
-        </article>
+      <article id="page-content" class="grid_12"><?php print render($page['content']); ?></article>
       <?php endif; ?>
     </div>
-
-    <?php print $feed_icons; ?>
-  </section>
-  
+    <?php print $feed_icons; ?></section>
   <footer id="footer" class="clearfix">
     <div id="footer-section" class="container_12">
       <div class="content">
         <ul class="grid_4 alpha">
           <li>Powered by <a href="https://drupal.org"
-            target="_blank">Drupal</a>
-          </li>
+            target="_blank">Drupal</a> </li>
         </ul>
         <ul class="grid_4">
           <li></li>
         </ul>
         <ul class="grid_4 omega">
           <li>Theme by <a href="http://www.buchanandesigngroup.com"
-            target="_blank">Buchanan Design Group</a>
-          </li>
+            target="_blank">Buchanan Design Group</a> </li>
         </ul>
       </div>
     </div>
