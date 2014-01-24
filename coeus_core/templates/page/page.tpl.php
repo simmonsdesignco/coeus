@@ -75,23 +75,23 @@
       <?php if ($main_menu || $secondary_menu): ?>
       <div id="navbar" class="grid_8 omega">
         <nav id="main-nav" class="alpha"><?php print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'id' => 'main-menu',
-              'class' => array(
-                'site-nav'
-              )
+          'links' => $main_menu,
+          'attributes' => array(
+            'id' => 'main-menu',
+            'class' => array(
+              'site-nav'
             )
-          )); ?> </nav>
+          )
+        )); ?></nav>
         <nav id="secondary-nav" class="omega"><?php print theme('links__system_secondary_menu', array(
-            'links' => $secondary_menu,
-            'attributes' => array(
-              'id' => 'secondary-menu',
-              'class' => array(
-                'site-nav'
-              )
+          'links' => $secondary_menu,
+          'attributes' => array(
+            'id' => 'secondary-menu',
+            'class' => array(
+              'site-nav'
             )
-          )); ?> </nav>
+          )
+        )); ?></nav>
       </div>
       <?php endif ?>
     </div>
