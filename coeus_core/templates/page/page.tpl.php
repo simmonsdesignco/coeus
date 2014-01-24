@@ -5,7 +5,7 @@
  * Default theme implementation to display a single Drupal page.
  *
  * The doctype, html, head and body tags are not in this template. Instead they
- * can be found in the html.tpl.php template in this directory.
+ * can be found in the html.tpl.php template in the ../templates directory.
  *
  * Available variables:
  *
@@ -43,16 +43,13 @@
  *   (e.g., the view and edit tabs when displaying a node).
  * - $action_links (array): Actions local to the page, such as 'Add menu' on the
  *   menu administration interface.
- * - $feed_icons: A string of all feed icons for the current page.
  *
  * Regions:
  * - $page['header']: Main content header of the current page.
  * - $page['help']: Dynamic help text, mostly for admin pages.
  * - $page['highlighted']: Items for the highlighted content region.
  * - $page['content']: The main content of the current page.
- * - $page['sidebar_first']: Items for the first sidebar.
- * - $page['sidebar_second']: Items for the second sidebar.
- * - $page['header']: Items for the header region.
+ * - $page['sidebar']: Items for the sidebar.
  * - $page['footer']: Items for the footer region.
  *
  * @see html.tpl.php
