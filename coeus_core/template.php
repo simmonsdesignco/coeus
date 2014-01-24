@@ -16,19 +16,9 @@ include_once drupal_get_path('theme', 'coeus_core') .
  */
 function coeus_core_preprocess_html(&$variables) {
   $browser_name = browser_detection('browser_name');
-  // Adds the Droid Google Fonts as external stylesheets. We want Drupal to keep
-	// track of our stylesheets for us.
-  drupal_add_css('http://fonts.googleapis.com/css?family=Droid+Sans', array(
-    'type' => 'external',
-    'group' => CSS_THEME,
-    'every_page' => TRUE
-  ));
-  drupal_add_css('http://fonts.googleapis.com/css?family=Droid+Serif', array(
-    'type' => 'external',
-    'group' => CSS_THEME,
-    'every_page' => TRUE
-  ));
-  drupal_add_css('http://fonts.googleapis.com/css?family=Droid+Sans+Mono', array(
+  // Adds the Open Sans Google Font as external stylesheets. We want Drupal to 
+  // keep track of our stylesheets for us.
+  drupal_add_css('http://fonts.googleapis.com/css?family=Open+Sans', array(
     'type' => 'external',
     'group' => CSS_THEME,
     'every_page' => TRUE

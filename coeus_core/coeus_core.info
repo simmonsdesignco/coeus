@@ -7,7 +7,6 @@ core = 7.x
 ; Stylesheets
 stylesheets[all][] = css/960_12_col.css
 stylesheets[all][] = css/fonts.css
-stylesheets[all][] = css/fonts/webfonts.css
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = css/media-queries.css
 
