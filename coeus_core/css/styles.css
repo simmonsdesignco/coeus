@@ -1,0 +1,374 @@
+/**
+ * Import our custom font styles. We used Typecast to create our font css.
+ * @see http://typecast.com/
+ */
+
+/**
+ * HTML Basic Elements
+ */
+html {
+  overflow-y: scroll;
+}
+body {
+   background-color: rgba(255, 255, 255, 1);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+a {
+  transition: 1s ease;
+}
+li {
+	margin-bottom: .5em;
+}
+input,
+select,
+textarea {
+  margin: 0 2px 6px;
+  color: #444;
+  border: 1px solid #d9d9d9 !important;
+  border-top: 1px solid #c0c0c0 !important;
+  box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+  border: 1px solid #4d90fe !important;
+  outline: 0;
+}
+details,
+figcaption,
+figure,
+summary {
+  display: block;
+}
+ul {
+  list-style: none;
+  list-style-image: none;
+}
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none;
+}
+ul.menu li {
+  margin: 0 0 0 1em;
+  padding: 0;
+}
+ul.primary {
+  margin: 1em 0;
+  padding: 0;
+}
+ul.primary li a {
+	padding: 0.33em 1em;
+}
+ul.primary li a:hover {
+  color: #333;
+  text-decoration: none;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  display: block;
+  padding: 4px 6px;
+  float: left;
+  margin: 9px 12px 7px 0;
+  background-color: #f5f5f5;
+  background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+  background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+  color: #444;
+  border: 1px solid #dcdcdc;
+  border: 1px solid rgba(0,0,0,0.1);
+  box-shadow: none;
+  	-webkit-box-shadow: none;
+  border-radius: 2px;
+  	-webkit-border-radius: 2px;
+  	-webkit-appearance: button;
+}
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: #e5e5e5;
+  background-image: -webkit-linear-gradient(top,#e5e5e5,#e1e1e1);
+  background-image: linear-gradient(top,#e5e5e5,#e1e1e1);
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+/**
+ * Coeus Page Styles
+ *
+ * List of elements defined in our page template file.
+ * @see page.tpl.php
+ */
+#page-container {
+}
+#top-nav {
+  height: 45px;
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+#branding {
+  display: block;
+  height: 100%;
+}
+#logo-figure {
+  margin: 0;
+  height: 100%;
+}
+#logo-figure a {
+  display: block;
+  height: 100%;
+}
+#logo-figure img {
+  margin: 8px 8px 8px 0;
+}
+#navbar {
+}
+#navbar ul {
+  height: 45px;
+  margin: 0;
+  padding: 0;
+}
+#navbar ul li {
+  display: inline;
+  float: left;
+  margin-bottom: 0;
+  list-style: none;
+}
+#navbar ul li:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+#navbar ul li a {
+  display: block;
+  line-height: 45px;
+  padding: 0 10px;
+}
+#main-nav {
+  float: left;
+}
+#main-menu {
+}
+#secondary-nav {
+  float: right;
+}
+#secondary-menu {
+}
+#page-header {
+  min-height: 50px;
+}
+#page-title-search {
+	margin: 1em 0;
+	width: 100%;
+}
+#search-block-wrapper {
+}
+#page-title-hr {
+	margin: 0;
+	clear: both;
+}
+#breadcrumb-wrapper {
+	width: 100%;
+	margin: 0;
+}
+#breadcrumb {
+  padding-top: 1em;
+}
+#content-section {
+}
+#tabs {
+}
+#content {
+  margin-top: 1em;
+}
+#page-content {
+}
+#sidebar {
+	float: right;
+}
+#footer {
+  width: 100%;
+}
+#footer-section {
+  padding: 1em 0;
+}
+#search-block-form .form-item {
+	float: left;
+	margin: 0;
+}
+#search-block-form .form-item input {
+	margin: 0;
+	padding: 4px 4px;
+}
+#search-block-form .form-actions {
+	margin: 0;
+}
+#search-block-form .form-actions input {
+	margin: 0;
+  float: right;
+}
+.text-format-wrapper .form-item,
+.text-format-wrapper .form-actions {
+  margin-top: 0;
+}
+ul.tips {
+  margin-left: 2em;
+  list-style: disc;
+}
+
+/**
+ * Aside Styles
+ */
+aside ul {
+  margin: 0;
+  padding: 0;
+}
+aside ul.menu {
+  padding: 0 0 0.25em 1em;
+}
+
+/**
+ * Region styles
+ */
+.region-footer {
+  padding: 1em 0;
+}
+.region-sidebar {
+  padding: 1em;
+  border: 1px solid #bbb;
+  background-color: #fbfbfb;
+}
+.region-sidebar h2 {
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+/**
+ * Views Styles
+ */
+.view-display-id-default {
+  padding: 6px;
+}
+.views-table {
+  width: 100.0%;
+}
+.view-header #header-title {
+	margin: 0;
+}
+.views-row {
+	margin: 1em 0 0 !important;
+	padding: 0 0 1em !important;
+	border-bottom: 1px solid rgba(0,0,0,.3);
+}
+.views-ui-dialog .form-buttons {
+  background-color: transparent;
+  padding: 5px 13px;
+  min-height: 45px;
+}
+.views-table thead tr {
+  background-color: #444;
+  border: 1px solid #444;
+  color: #ddd;
+}
+.views-table thead th {
+  width: 33%;
+  text-align: center;
+  border: 1px solid #999;
+  border-bottom: 3px solid #bbb;
+}
+  
+
+/**
+ * Book Styles
+ */
+.book-navigation {
+  margin-bottom: 1.385em;
+}
+.book-navigation .menu {
+  padding: 1em 0 0 1em;
+}
+label .form-required {
+  font-weight: normal;
+}
+
+/**
+ * Fieldset Styles
+ */
+fieldset.collapsible,
+fieldset.collapsed {
+	margin: 0 0 1em;
+	padding: 0;
+	border: none;
+}
+fieldset .prettyprinted {
+	max-width: 680px;
+	margin-top: 0;
+}
+.fieldset-legend {
+  margin-top: 0;
+}
+.fieldset-legend:hover {
+  text-decoration: none;
+}
+a.fieldset-title {
+	color: #444;
+}
+a.fieldset-title:hover {
+	color: #444;
+	text-decoration: none;
+}
+
+/**
+ * Admin Pages Styles
+ */
+.page-admin .container_12 {
+  width: 95%;
+}
+.page-admin table {
+  width: 100%;
+}
+.admin-operations .ctools-button-processed {
+  background-color: transparent;
+}
+.admin-operations .ctools-button-processed .ctools-content ul {
+  margin: 0;
+  padding: 0;
+}
+table.system-status-report tr {
+  border-bottom: 1px solid #ccc;
+}
+table.system-status-report tr.ok {
+  color: #255b1e;
+  background-color: #e5ffe2;
+}
+table.system-status-report tr.info {
+  color: #040f37;
+  background-color: #bdf;
+}
+table.system-status-report tr.warning {
+  color: #840;
+  background-color: #fffce5;
+}
+table.system-status-report tr.error {
+  color: #8c2e0b;
+  background-color: #fef5f1;
+}
+html.js fieldset.collapsed {
+  height: auto;
+}
+
+div.geshifilter ol {
+	padding: 0 0 0 2.7em;
+}
