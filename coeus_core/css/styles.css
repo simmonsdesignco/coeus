@@ -333,8 +333,29 @@ a.fieldset-title:hover {
 .page-admin .container_12 {
   width: 95%;
 }
+.page-admin #top-nav,
+.page-admin #search-block-wrapper,
+.page-admin #footer {
+  visibility: hidden;
+  height: 1px;
+}
 .page-admin table {
   width: 100%;
+}
+.page-admin-structure-block table tr {
+  height: 40px;
+}
+.page-admin-structure-block table tr td {
+  padding-left: 1em;
+}
+.page-admin-structure-block table tr.draggable td {
+  background-color: rgba(0, 150, 255, .3);
+  border: 1px solid rgba(0, 150, 255, 1);
+  border-left: none;
+  border-right: none;
+}
+.page-admin-structure-block .region-title {
+  background-color: rgba(0, 0, 0, .1);
 }
 .admin-operations .ctools-button-processed {
   background-color: transparent;
@@ -342,6 +363,10 @@ a.fieldset-title:hover {
 .admin-operations .ctools-button-processed .ctools-content ul {
   margin: 0;
   padding: 0;
+}
+#module-filter-submit input {
+  margin: 2em auto !important;
+  float: none;
 }
 table.system-status-report tr {
   border-bottom: 1px solid rgba(204, 204, 204, 1);
@@ -365,7 +390,9 @@ table.system-status-report tr.error {
 html.js fieldset.collapsed {
   height: auto;
 }
-
-div.geshifilter ol {
-	padding: 0 0 0 2.7em;
+.system-themes-list-disabled .theme-selector {
+  opacity: 0.5;
+}
+.system-themes-list-disabled .theme-selector:hover {
+  opacity: 1;
 }

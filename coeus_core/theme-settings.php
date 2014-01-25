@@ -9,7 +9,7 @@ function coeus_core_form_system_theme_settings_alter(&$form, $form_state) {
   ));
   $rdfa_desc =
     'Implements new features in RDFa 1.1 to express structured data in HTML5.
-    <br />' . 'See W3C recommendations on ' . $rdfa_link;
+    <br />See W3C recommendations on ' . $rdfa_link;
 
   $form['additional_settings'] = array(
     '#type' => 'vertical_tabs',

@@ -97,7 +97,7 @@
     <div id="page-title-search" class="grid_12 clearfix">
       <div id="page-title-wrapper" class="grid_9 alpha"><?php print render($title_prefix); ?>
         <h1 id="page-title"><?php print $title; ?></h1>
-        <?php print render($title_suffix); ?></div>
+      <?php print render($title_suffix); ?></div>
       <div id="search-block-wrapper" class="grid_3 omega">
         <?php $search_block = module_invoke('search', 'block_view', 'search'); print render($search_block); ?>
       </div>

@@ -104,23 +104,34 @@ function coeus_core_preprocess_html_tag(&$variables) {
 function coeus_core_html_head_alter(&$head_elements) {
   // Create browser name variable from the browser_detection script.
   $browser_name = browser_detection('browser_name');
+  // Set some variables for page title, site name, and site slogan.
+  $page_title = drupal_get_title();
+  $site_name = variable_get('site_name');
+  $site_slogan = variable_get('site_slogan');
 
-  // Set the default head title using the page title and site name.
-  $coeus_get_title = implode(' | ', array(
-    drupal_get_title(),
-    variable_get('site_name')
-  ));
+  // Check if the page title is empty.
+  if ($page_title != $site_name) {
+    // If true, set a default title using site name.
+    $page_title = implode(' | ', array(
+      $page_title,
+      $site_name
+    ));
+  }
+  
+  else {
+    $page_title = $site_name;
+  }
 
 	// If site slogan is given, add this to our head title.
-  if (variable_get('site_slogan') != NULL) {
-    $coeus_get_title = implode(' - ', array(
-      $coeus_get_title,
-      variable_get('site_slogan')
+  if ($site_slogan != NULL) {
+    $page_title = implode(' - ', array(
+      $page_title,
+      $site_slogan
     ));
   }
 	// Strip all tags from our new head title. We do this so " " is removed from
 	// the head title.
-  $coeus_title = strip_tags($coeus_get_title);
+  $coeus_title = strip_tags($page_title);
 
 	// Remove Drupal's 'Generator' and the 'Content-Type' attributes.
   unset($head_elements['system_meta_generator']);
@@ -174,26 +185,63 @@ function coeus_core_html_head_alter(&$head_elements) {
  * Preprocess variables for page.tpl.php
  */
 function coeus_core_preprocess_page(&$variables) {
-  // Create 'Page Title | Site Name' variable.
-  $coeus_get_title = implode(' | ', array(
-    drupal_get_title(),
-    variable_get('site_name')
-  ));
+  // Set some variables for page title, site name, and site slogan.
+  $page_title = drupal_get_title();
+  $site_name = variable_get('site_name');
+  $site_slogan = variable_get('site_slogan');
+  
+  // Change common page titles.
+  global $user;
+  // Set annonymous user page titles.
+  if (!$user->uid) {
+    if (((arg(0) == 'user') && (arg(1) == '')) || (arg(1) == 'login')) {
+      // Set login page title.
+      drupal_set_title('Login');
+    }
+    if (arg(1) == 'password') {
+      // Set password reset page title.
+      drupal_set_title('Request New Password');
+    }
+    if (arg(1) == 'register') {
+      // Set password reset page title.
+      drupal_set_title('Register');
+    }
+  }
+  
+  // Set global page titles.
+  if (arg(0) == 'contact') {
+    drupal_set_title('Contact Us');
+  }
 
-  // If using a slogan, create 'Page Title | Site Name - Site Slogan' variable.
-  if (variable_get('site_slogan') != NULL) {
-    $coeus_get_title = implode(' - ', array(
-      $coeus_get_title,
-      variable_get('site_slogan')
+  // Check if the page title is empty.
+  if (empty($page_title)) {
+    // If true, set a default title using site name.
+    drupal_set_title($site_name);
+    $page_title = $site_name;
+  }
+
+  // Else set the default logo title using the page title and site name.
+  else {
+    $page_title = implode(' | ', array(
+      $page_title,
+      $site_name
+    ));
+  }
+
+	// If site slogan is given, add this to our logo title.
+  if ($site_slogan != NULL) {
+    $page_title = implode(' - ', array(
+      $page_title,
+      $site_slogan
     ));
   }
 
   // Create variable of complete <title> variable from above variables.
-  $coeus_title = $coeus_get_title;
+  $coeus_title = $page_title;
 
   // Set up logo element with the logo path, alt tag, and attributes.
   $logo_path = check_url($variables['logo']);
-  $logo_alt = variable_get('site_name');
+  $logo_alt = $site_name;
   $logo_vars = array(
     'path' => $logo_path,
     'alt' => $logo_alt . ' logo',
