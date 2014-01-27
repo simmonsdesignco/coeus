@@ -240,14 +240,18 @@ function coeus_core_preprocess_page(&$variables) {
   $coeus_title = $page_title;
 
   // Set up logo element with the logo path, alt tag, and attributes.
-  $logo_path = check_url($variables['logo']);
+  global $base_root;
+  $logo_path = str_replace($base_root."/", "", $variables['logo']);
+  $logo_details = image_get_info($logo_path);
   $logo_alt = $site_name;
   $logo_vars = array(
     'path' => $logo_path,
     'alt' => $logo_alt . ' logo',
     'attributes' => array(
       'class' => 'site-logo'
-    )
+    ),
+    'width'  => $logo_details['width'],
+    'height' => $logo_details['height'],
   );
 
   // Override the default logo element with custom variables set above.

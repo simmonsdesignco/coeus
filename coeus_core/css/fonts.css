@@ -1,11 +1,3 @@
-/**
- * Use @font-face to set up our Google Fonts for Chrome.
- */
-
-/**
- * Typecast font styles
- * @see http://typecast.com/
- */
 body {
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 	font-size: 87.5%; /* Base font size: 14px */

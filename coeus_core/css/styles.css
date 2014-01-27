@@ -74,7 +74,8 @@ ul.primary li a:hover {
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+#edit-cancel {
   cursor: pointer;
   display: block;
   padding: 4px 6px;
@@ -90,6 +91,7 @@ input[type="submit"] {
   border-radius: 2px;
   	-webkit-border-radius: 2px;
   	-webkit-appearance: button;
+  line-height: 1.2em;
 }
 button:hover,
 input[type="button"]:hover,
