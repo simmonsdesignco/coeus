@@ -102,7 +102,6 @@
         <?php $search_block = module_invoke('search', 'block_view', 'search'); print render($search_block); ?>
       </div>
     </div>
-    <hr noshade id="page-title-hr" class="clearfix">
     <?php if ($breadcrumb): ?>
     <div id="breadcrumb-wrapper" class="grid_12 clearfix"><?php print $breadcrumb; ?></div>
     <?php endif; ?>

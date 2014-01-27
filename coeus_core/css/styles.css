@@ -169,8 +169,10 @@ input[type="submit"]:hover {
   min-height: 50px;
 }
 #page-title-search {
-	margin: 1em 0;
-	width: 100%;
+	margin: 1em 0 0;
+  padding-bottom: 1em;
+  width: 100%;
+  border-bottom: 3px solid #888;
 }
 #search-block-wrapper {
 }

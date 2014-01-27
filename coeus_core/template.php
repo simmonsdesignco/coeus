@@ -42,7 +42,7 @@ function coeus_core_preprocess_html(&$variables) {
     if ($variables['rdf_namespaces'] && function_exists('rdf_get_namespaces')) {
       $variables['rdf'] = array('prefix' => '');
       foreach (rdf_get_namespaces() as $prefix => $uri) {
-        $variables['rdf']['prefix'] .= $prefix . ': ' . $uri;
+        $variables['rdf']['prefix'] .= $prefix . ': ' . $uri . ' ';
       }
       $variables['rdfa_namespaces'] = drupal_attributes($variables['rdf']);
     }
