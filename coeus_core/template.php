@@ -8,13 +8,13 @@ include_once drupal_get_path('theme', 'coeus_core') .
  *
  * Default template: html.tpl.php.
  *
- * @param array $variables
+ * @param array $vars
  *   An associative array containing:
  *   - drupal_add_css: An associative array containing the properties of
  *     css files being added to the HTML head element.
  *     Properties used: #type, #group, #every_page, and #browsers.
  */
-function coeus_core_preprocess_html(&$variables) {
+function coeus_core_preprocess_html(&$vars) {
   $browser_name = browser_detection('browser_name');
   // Adds the Open Sans Google Font as external stylesheets. We want Drupal to 
   // keep track of our stylesheets for us.
@@ -30,27 +30,27 @@ function coeus_core_preprocess_html(&$variables) {
   drupal_add_js(path_to_theme() . '/js/modernizr.custom.min.js');
 
   // HTML element attributes.
-  $variables['html_attributes_array'] = array(
+  $vars['html_attributes_array'] = array(
     'class' => array($browser_name),
-    'lang' => $variables['language']->language,
-    'dir' => $variables['language']->dir,
+    'lang' => $vars['language']->language,
+    'dir' => $vars['language']->dir,
   );
 
   $rdfa_settings = theme_get_setting('rdfa_serialization');
   if ($rdfa_settings == 1) {
     // Serialize RDF Namespaces into an RDFa 1.1 prefix attribute.
-    if ($variables['rdf_namespaces'] && function_exists('rdf_get_namespaces')) {
-      $variables['rdf'] = array('prefix' => '');
+    if ($vars['rdf_namespaces'] && function_exists('rdf_get_namespaces')) {
+      $vars['rdf'] = array('prefix' => '');
       foreach (rdf_get_namespaces() as $prefix => $uri) {
-        $variables['rdf']['prefix'] .= $prefix . ': ' . $uri . ' ';
+        $vars['rdf']['prefix'] .= $prefix . ': ' . $uri . ' ';
       }
-      $variables['rdfa_namespaces'] = drupal_attributes($variables['rdf']);
+      $vars['rdfa_namespaces'] = drupal_attributes($vars['rdf']);
     }
   }
   
   // Define variable to be called for html lang and dir tags.
-  $variables['html_attributes'] = drupal_attributes(
-    $variables['html_attributes_array']);
+  $vars['html_attributes'] = drupal_attributes(
+    $vars['html_attributes_array']);
 }
 
 /**
@@ -58,14 +58,14 @@ function coeus_core_preprocess_html(&$variables) {
  *
  * Default template: html.tpl.php.
  *
- * @param array $variables
+ * @param array $vars
  *   An associative array containing:
  *   - element: An associative array containing the properties of
  *     unneeded HTML tags.
  *     Properties used: #attributes, #value_prefix, and #value_suffix.
  */
-function coeus_core_preprocess_html_tag(&$variables) {
-  $el = &$variables['element'];
+function coeus_core_preprocess_html_tag(&$vars) {
+  $el = &$vars['element'];
 
   // Remove type="..." attributes from style, script, and link elements.
   if (in_array($el['#tag'], array('script', 'link', 'style'))) {
@@ -91,6 +91,14 @@ function coeus_core_preprocess_html_tag(&$variables) {
     $el['#attributes']['media'] === 'all') {
       unset($el['#attributes']['media']);
   }
+  
+  // xml:lang alone is invalid in HTML5. Use the lang attribute instead.
+  if (isset($vars['attributes_array']['lang'])) {
+    $vars['attributes_array']['lang'] = '';
+  }
+  unset($vars['attributes_array']['xml:lang']);
+  unset($vars['attributes_array']['property']);
+  unset($vars['attributes_array']['rel']);
 }
 
 /**
@@ -184,7 +192,7 @@ function coeus_core_html_head_alter(&$head_elements) {
 /**
  * Preprocess variables for page.tpl.php
  */
-function coeus_core_preprocess_page(&$variables) {
+function coeus_core_preprocess_page(&$vars) {
   // Set some variables for page title, site name, and site slogan.
   $page_title = drupal_get_title();
   $site_name = variable_get('site_name');
@@ -213,22 +221,12 @@ function coeus_core_preprocess_page(&$variables) {
     drupal_set_title('Contact Us');
   }
 
-  // Check if the page title is empty.
-  if (empty($page_title)) {
-    // If true, set a default title using site name.
-    drupal_set_title($site_name);
+  // If site slogan does not exist, use just the site name for logo title.
+  if (empty($site_slogan)) {
     $page_title = $site_name;
   }
 
-  // Else set the default logo title using the page title and site name.
-  else {
-    $page_title = implode(' | ', array(
-      $page_title,
-      $site_name
-    ));
-  }
-
-	// If site slogan is given, add this to our logo title.
+	// If site slogan exists, add this to our logo title.
   if ($site_slogan != NULL) {
     $page_title = implode(' - ', array(
       $page_title,
@@ -236,12 +234,9 @@ function coeus_core_preprocess_page(&$variables) {
     ));
   }
 
-  // Create variable of complete <title> variable from above variables.
-  $coeus_title = $page_title;
-
   // Set up logo element with the logo path, alt tag, and attributes.
   global $base_root;
-  $logo_path = str_replace($base_root."/", "", $variables['logo']);
+  $logo_path = str_replace($base_root."/", "", $vars['logo']);
   $logo_details = image_get_info($logo_path);
   $logo_alt = $site_name;
   $logo_vars = array(
@@ -255,11 +250,11 @@ function coeus_core_preprocess_page(&$variables) {
   );
 
   // Override the default logo element with custom variables set above.
-  $variables['logo_img'] = theme('image', $logo_vars);
-  $variables['site_logo'] = $variables['logo_img'] ? l($variables['logo_img'],
+  $vars['logo_img'] = theme('image', $logo_vars);
+  $vars['site_logo'] = $vars['logo_img'] ? l($vars['logo_img'],
     '<front>', array(
       'attributes' => array(
-        'title' => check_plain($coeus_title)
+        'title' => check_plain($page_title)
       ),
       'html' => TRUE
     )
@@ -278,8 +273,8 @@ function coeus_core_preprocess_search_block_form(&$vars) {
 }
 
 /* Put Breadcrumbs in a ul li structure */
-function coeus_core_breadcrumb($variables) {
-  $bc = $variables['breadcrumb'];
+function coeus_core_breadcrumb($vars) {
+  $bc = $vars['breadcrumb'];
   if (!empty($bc)) {
     // Provide a navigational heading to give context for breadcrumb links to
     // screen-reader users. Make the heading invisible with 
@@ -300,4 +295,17 @@ function coeus_core_form_alter(&$form, &$form_state, $form_id) {
     // Alternative (HTML5) placeholder attribute instead of using the javascript
     $form['search_block_form']['#attributes']['placeholder'] = t('Search');
   }
+}
+
+/**
+ * Implements hook_preprocess_username().
+ */
+function coeus_core_preprocess_username(&$vars) {
+  // xml:lang alone is invalid in HTML5. Use the lang attribute instead.
+  if (empty($vars['attributes_array']['lang'])) {
+    $vars['attributes_array']['lang'] = '';
+  }
+  unset($vars['attributes_array']['xml:lang']);
+  unset($vars['attributes_array']['property']);
+  unset($vars['attributes_array']['rel']);
 }
