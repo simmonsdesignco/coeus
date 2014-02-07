@@ -118,7 +118,7 @@ function coeus_core_html_head_alter(&$head_elements) {
   $site_slogan = variable_get('site_slogan');
 
   // Check if the page title is empty.
-  if ($page_title != $site_name) {
+  if ($page_title != '') {
     // If true, set a default title using site name.
     $page_title = implode(' | ', array(
       $page_title,
@@ -131,7 +131,7 @@ function coeus_core_html_head_alter(&$head_elements) {
   }
 
 	// If site slogan is given, add this to our head title.
-  if ($site_slogan != NULL) {
+  if ($site_slogan != '') {
     $page_title = implode(' - ', array(
       $page_title,
       $site_slogan
@@ -241,7 +241,7 @@ function coeus_core_preprocess_page(&$vars) {
   $logo_alt = $site_name;
   $logo_vars = array(
     'path' => $logo_path,
-    'alt' => $logo_alt . ' logo',
+    'alt' => $logo_alt,
     'attributes' => array(
       'class' => 'site-logo'
     ),
@@ -254,7 +254,7 @@ function coeus_core_preprocess_page(&$vars) {
   $vars['site_logo'] = $vars['logo_img'] ? l($vars['logo_img'],
     '<front>', array(
       'attributes' => array(
-        'title' => check_plain($page_title)
+        'title' => check_plain($logo_alt)
       ),
       'html' => TRUE
     )

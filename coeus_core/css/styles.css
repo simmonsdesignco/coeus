@@ -21,6 +21,12 @@ a {}
 li {
 	margin-bottom: .5em;
 }
+form {
+  display: inline-block;
+}
+label {
+  margin-bottom: 0.4em;
+}
 input,
 select,
 textarea {
