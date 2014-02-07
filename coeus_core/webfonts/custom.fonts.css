@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'open_sansregular';
+  font-family: 'Open Sans Regular';
   src: url('OpenSans-Regular-webfont.eot');
   src: url('OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
     url('OpenSans-Regular-webfont.woff') format('woff'),
@@ -9,7 +9,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'open_sanslight';
+  font-family: 'Open Sans Light';
   src: url('OpenSans-Light-webfont.eot');
   src: url('OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
     url('OpenSans-Light-webfont.woff') format('woff'),
@@ -19,7 +19,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'open_sanssemibold';
+  font-family: 'Open Sans Semibold';
   src: url('OpenSans-Semibold-webfont.eot');
   src: url('OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
     url('OpenSans-Semibold-webfont.woff') format('woff'),
@@ -30,15 +30,15 @@
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-      font-family: 'open_sansregular';
+      font-family: 'Open Sans Regular';
       src: url('OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
   }
   @font-face {
-      font-family: 'open_sanslight';
+      font-family: 'Open Sans Light';
       src: url('OpenSans-Light-webfont.svg#open_sanslight') format('svg');
   }
   @font-face {
-      font-family: 'open_sanssemibold';
+      font-family: 'Open Sans Semibold';
       src: url('OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
   }
 }
