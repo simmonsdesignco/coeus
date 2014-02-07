@@ -24,7 +24,6 @@ h6 {
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans Semibold', Arial, Helvetica, sans-serif;
-  font-weight: normal;
 	line-height: 1.1em;
 	margin-bottom: 0.8em;
 }
@@ -34,8 +33,10 @@ h1#header-title {
 }
 h1#page-title {
 	font-size: 3.25em;
+  font-weight: normal;
 	line-height: 1em;
 	margin: 0.3em 0;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.3);
 }
 h3.fieldset-source {
 	font-size: 1.375em;
